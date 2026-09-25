@@ -37,7 +37,7 @@ const observer = new IntersectionObserver(
 // Section headings and each card fade in, with siblings slightly staggered
 document
   .querySelectorAll(
-    ".section-label, .section h2, .lede, .pillar-intro, .pillar-card, .foundation-item, .strip-inner, .card, .nda-note, .pubs li, .timeline li, .edu, .toolkit-grid > div, .contact-card"
+    ".section-label, .section h2, .lede, .pillar-intro, .pillar-card, .foundation-item, .strip-inner, .card, .nda-note, .pubs li, .timeline li, .edu, .toolkit-grid > div, .about-me, .contact-card"
   )
   .forEach((el) => {
     const index = Array.prototype.indexOf.call(el.parentElement.children, el);
