@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preethi K M Ramanujam · Optimisation &amp; Applied AI</title>
+  <meta name="description" content="Preethi K M Ramanujam is a data scientist and researcher in optimisation and applied AI (computer vision, LLMs, audio and operations research), and a Research Fellow at NUS School of Computing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Apply saved/system theme before paint to avoid a flash
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#top" class="logo"><span>P</span>R</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#foundation">Infrastructure</a></li>
+        <li><a href="#areas">Expertise</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-toggle" aria-label="Toggle dark mode">◐</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <canvas id="network" aria-hidden="true"></canvas>
+      <div class="container hero-inner">
+        <div class="hero-text">
+        <p class="eyebrow">AI Infrastructure · Deployment · Optimisation</p>
+        <h1>Preethi K M<br /><span class="gradient-text">Ramanujam</span></h1>
+        <p class="tagline">
+          I build the foundations that take AI and optimisation from prototype to production:
+          training pipelines, model serving, cloud and edge deployment, and integration with the
+          systems a business already runs.
+        </p>
+        <div class="hero-actions">
+          <a href="#foundation" class="btn btn-primary">Explore my work</a>
+          <!-- Résumé button hidden until resume.pdf is added:
+          <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Résumé ↗</a> -->
+        </div>
+        </div>
+        <!-- Portrait: save your photo as photo.jpg in this folder. Until then the monogram shows. -->
+        <figure class="portrait">
+          <span class="portrait-monogram" aria-hidden="true">PR</span>
+          <img src="photo.jpg" alt="Portrait of Preethi K M Ramanujam" onerror="this.remove()" />
+        </figure>
+        <dl class="hero-stats">
+          <div><dt>3.5 yrs</dt><dd>deploying AI in production</dd></div>
+          <div><dt>Cloud → Edge</dt><dd>AWS, Kubernetes, on-device</dd></div>
+          <div><dt>4 domains</dt><dd>vision, language, audio, optimisation</dd></div>
+          <div><dt>PhD</dt><dd>Operations Management, NTU</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- FOUNDATION: INFRASTRUCTURE & DEPLOYMENT -->
+    <section id="foundation" class="section container">
+      <p class="section-label">The foundation</p>
+      <h2>Infrastructure that turns models into products</h2>
+      <p class="lede">
+        I'm a <strong>Research Fellow at the NUS School of Computing</strong>. Before that I spent
+        3.5 years at an automotive AI research centre building the technology foundation for
+        manufacturing AI: pipelines, serving, cloud and edge infrastructure, and integrations with
+        live plant systems. I work closely with cross-functional teams to take business requirements
+        all the way to deployed, maintained systems.
+      </p>
+      <div class="foundation-grid">
+        <div class="foundation-item">
+          <span class="foundation-num">01</span>
+          <h3>Training pipelines &amp; MLOps</h3>
+          <p>Automated, repeatable training pipelines with experiment tracking in MLflow and version control in GitLab.</p>
+        </div>
+        <div class="foundation-item">
+          <span class="foundation-num">02</span>
+          <h3>Model serving</h3>
+          <p>Dynamic multi-model serving with TorchServe on multi-GPU servers, and managed endpoints on AWS SageMaker.</p>
+        </div>
+        <div class="foundation-item">
+          <span class="foundation-num">03</span>
+          <h3>Cloud architecture</h3>
+          <p>Services on AWS using Lambda, API Gateway, S3 and ECS, monitored with CloudWatch.</p>
+        </div>
+        <div class="foundation-item">
+          <span class="foundation-num">04</span>
+          <h3>Containers &amp; services</h3>
+          <p>Docker, Kubernetes and FastAPI. For example, an optimisation service on Kubernetes that answers in under 10 seconds.</p>
+        </div>
+        <div class="foundation-item">
+          <span class="foundation-num">05</span>
+          <h3>Edge &amp; on-device AI</h3>
+          <p>Models integrated with edge devices: vision at the robot cell, audio on drones, and local LLMs through Ollama.</p>
+        </div>
+        <div class="foundation-item">
+          <span class="foundation-num">06</span>
+          <h3>Systems integration</h3>
+          <p>Algorithms connected to operational technology (OT) and IoT platforms, working on live production signals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREAS OF EXPERTISE -->
+    <section id="areas" class="section container">
+      <p class="section-label">Areas of expertise</p>
+      <h2>What I build on that foundation</h2>
+      <div class="pillar-grid">
+        <a class="pillar-card" href="#vision">
+          <span class="pillar-num">01</span>
+          <span class="pillar-domain">Applied AI</span>
+          <h3>Computer Vision</h3>
+          <p>Robotic pick-and-place inference, auto-annotation with foundation models, and zero-shot hazard detection.</p>
+          <span class="pillar-go">See work →</span>
+        </a>
+        <a class="pillar-card" href="#llm">
+          <span class="pillar-num">02</span>
+          <span class="pillar-domain">Applied AI</span>
+          <h3>Large Language Models</h3>
+          <p>Hybrid-retrieval RAG and agentic text-to-SQL systems, with proper evaluation.</p>
+          <span class="pillar-go">See work →</span>
+        </a>
+        <a class="pillar-card" href="#audio">
+          <span class="pillar-num">03</span>
+          <span class="pillar-domain research">Fundamental research</span>
+          <h3>Audio &amp; Signals</h3>
+          <p>Current NUS research: detecting people from drone-mounted microphones, over propeller noise.</p>
+          <span class="pillar-go">See work →</span>
+        </a>
+        <a class="pillar-card" href="#or">
+          <span class="pillar-num">04</span>
+          <span class="pillar-domain opt">Optimisation</span>
+          <h3>Operations Research</h3>
+          <p>Sequencing, inventory, workforce, routing and carbon pricing, from theory to production.</p>
+          <span class="pillar-go">See work →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 01 VISION -->
+    <section id="vision" class="section pillar container">
+      <div class="pillar-intro">
+        <p class="section-label">01 · Applied AI</p>
+        <h2>Computer Vision</h2>
+        <p>
+          I design vision systems that hold up in production, covering model serving, training
+          automation, and the tooling that makes data preparation faster.
+        </p>
+        <ul class="tags">
+          <li>PyTorch</li><li>MMDetection</li><li>Segment Anything</li><li>TorchServe</li><li>OpenCV</li>
+          <li>Vision-Language Models</li><li>AWS</li><li>Edge Deployment</li>
+        </ul>
+      </div>
+      <div class="pillar-projects">
+        <article class="card">
+          <p class="card-kicker">Industry project · Automotive manufacturing</p>
+          <h3>Multi-Model Vision Inference for Robotic Pick-and-Place</h3>
+          <p>
+            Working with the robotics team, I built the vision system that lets robot arms pick parts
+            out of their original boxes and place them into kit boxes for workers further down the
+            assembly line. Each part gets its own instance segmentation model, served dynamically
+            through TorchServe, with automated training pipelines and AWS hosting integrated with
+            edge devices.
+          </p>
+          <ul class="features">
+            <li><strong>Few-shot synthetic training data:</strong> realistic, cluttered training scenes are generated from a handful of template images per part. Orientation-aware augmentation handles parts that are usually stacked in the same direction.</li>
+            <li><strong>Foundation-model masks:</strong> Segment Anything (SAM) produces the part masks that feed the data pipeline.</li>
+            <li><strong>Multi-GPU serving:</strong> models are registered and scaled on a GPU inference server, and new workers are placed on whichever GPU has enough free memory.</li>
+          </ul>
+          <ul class="tags small"><li>MMDetection</li><li>SAM</li><li>TorchServe</li><li>Docker</li><li>Synthetic Data</li></ul>
+        </article>
+        <article class="card">
+          <p class="card-kicker">Industry project · Internal tooling</p>
+          <h3>Auto-Annotation for Industrial Parts</h3>
+          <p>
+            An annotation tool that combines foundation models (Meta's Segment Anything and
+            vision-language models) with classical computer vision to label industrial parts
+            automatically. When the automatic labels need fixing, annotators can switch to an
+            interactive click-to-segment mode, so they only review and correct.
+          </p>
+          <ul class="features">
+            <li>Locates the container using colour, then runs SAM to segment the parts inside it</li>
+            <li>Uses CAD data (expected part counts and dimensions) to filter out wrong masks</li>
+            <li>Interactive mode: click foreground and background points, then segment several images and save the masks</li>
+            <li>Supports SAM ViT-B, ViT-L and ViT-H, trading speed for accuracy</li>
+          </ul>
+          <ul class="metrics">
+            <li><strong>12×</strong> faster inference (5s → 0.4s)</li>
+            <li><strong>50%</strong> less data preparation time</li>
+          </ul>
+          <ul class="tags small"><li>Segment Anything</li><li>Vision-Language Models</li><li>PyTorch</li><li>OpenCV</li></ul>
+        </article>
+        <article class="card">
+          <p class="card-kicker">Open source · Vision + language</p>
+          <h3>Hazardous Scene Analysis for Remote Robot Operators</h3>
+          <p>
+            A two-stage pipeline that turns images of hazardous industrial scenes into structured JSON
+            for a remote operator controlling a robot. Stage 1 runs open-vocabulary detection to find
+            hazard-relevant objects. Stage 2 uses a small LLM to reason over the detections and their
+            spatial relationships and return a hazard assessment with an explanation and a confidence score.
+          </p>
+          <ul class="features">
+            <li>Swappable detectors: <strong>OWLv2</strong> or <strong>Grounding DINO</strong>, both zero-shot from text prompts</li>
+            <li>Reasoning with <strong>Qwen2.5-1.5B-Instruct</strong>, small enough to run locally</li>
+            <li>Asks the operator a clarifying question when the combined confidence falls below a set threshold</li>
+            <li>Includes a ground-truth annotation tool and an evaluation script</li>
+            <li>Runs on Apple Silicon (MPS), NVIDIA GPUs (CUDA) or CPU</li>
+          </ul>
+          <ul class="tags small"><li>PyTorch</li><li>Hugging Face</li><li>OWLv2</li><li>Grounding DINO</li><li>Qwen2.5</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/Preethskr/hazard-detection" target="_blank" rel="noopener">View code ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 02 LLMs -->
+    <section id="llm" class="section pillar container">
+      <div class="pillar-intro">
+        <p class="section-label">02 · Applied AI</p>
+        <h2>Large Language Models</h2>
+        <p>
+          I build LLM systems that connect language models to real data, so people can ask questions
+          in plain language and get answers grounded in documents and databases. I use evaluation to
+          show they work.
+        </p>
+        <ul class="tags">
+          <li>LangChain</li><li>OpenAI API</li><li>Claude</li><li>Hugging Face</li><li>Ollama</li>
+          <li>Hybrid Retrieval</li><li>Vector Search (HNSW)</li><li>RAGAS</li>
+        </ul>
+      </div>
+      <div class="pillar-projects">
+        <article class="card">
+          <p class="card-kicker">Retrieval-augmented generation</p>
+          <h3>RAG Pipeline with Hybrid Retrieval</h3>
+          <p>
+            A RAG pipeline that combines BM25 keyword search with semantic embeddings. It ingests
+            multiple document formats and streams answers with source attribution. An abstraction
+            layer switches between local on-device models (Ollama) and cloud LLMs. Response quality
+            and faithfulness are measured with RAGAS.
+          </p>
+        </article>
+        <article class="card">
+          <p class="card-kicker">Open source · Agentic system</p>
+          <h3>Agentic Text-to-SQL for Business Analysts</h3>
+          <p>
+            A business analyst asks a question in plain English and gets back the answer, the SQL
+            that produced it, and a plain-English interpretation. The agent uses Claude's tool-use API
+            in a loop: it chooses a tool, the application runs it, and the model reads the result and
+            decides the next step. The LLM never touches the database directly.
+          </p>
+          <ul class="features">
+            <li><strong>Dynamic schema discovery:</strong> five tools find schemas, tables, columns, foreign keys and categorical values as needed, instead of putting the whole schema in the prompt. This keeps it working on large databases.</li>
+            <li><strong>Guardrails:</strong> read-only by default, with human approval before any write. Also an automatic row limit, a 10-second query timeout, and errors returned to the agent so it can correct itself and retry.</li>
+            <li><strong>Pluggable layers:</strong> database adapters for PostgreSQL, Oracle, Tibero and SQL Server. LLM providers for Claude, Groq (Llama) and Gemini.</li>
+            <li><strong>Memory:</strong> resumable sessions, with older turns summarised and stored as JSON or in Postgres. Logging is structured JSON.</li>
+          </ul>
+          <ul class="tags small"><li>Claude tool use</li><li>Python</li><li>PostgreSQL</li><li>Oracle</li><li>SQL Server</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/Preethskr/sql-agent" target="_blank" rel="noopener">View code ↗</a>
+          </div>
+        </article>
+        <article class="card">
+          <p class="card-kicker">Open source · RAG</p>
+          <h3>Multi-Source RAG Q&amp;A System</h3>
+          <p>
+            A modular retrieval-augmented Q&amp;A system that ingests local PDFs and web pages into
+            a persistent vector store and answers questions over them from an interactive command line.
+          </p>
+          <ul class="features">
+            <li>Ingests PDFs and URLs, and skips sources that were already ingested</li>
+            <li>Persistent <strong>ChromaDB</strong> vector store with <strong>BAAI/bge-small-en-v1.5</strong> embeddings</li>
+            <li>Built with <strong>LangChain</strong>, using OpenAI models to generate answers</li>
+            <li>Clean <code>src/</code> layout packaged with <code>pyproject.toml</code>, set up to run the same way in a container</li>
+          </ul>
+          <ul class="tags small"><li>LangChain</li><li>ChromaDB</li><li>Hugging Face</li><li>OpenAI</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/Preethskr/rag_langchain" target="_blank" rel="noopener">View code ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 AUDIO -->
+    <section id="audio" class="section pillar container">
+      <div class="pillar-intro">
+        <p class="section-label">03 · Fundamental research</p>
+        <h2>Audio &amp; Signals</h2>
+        <p>
+          My current research at NUS looks at a hard sensing problem: hearing signs of human
+          presence in extremely noisy audio, and doing it in real time on the edge.
+        </p>
+        <ul class="tags">
+          <li>Audio Classification</li><li>Source Separation</li><li>Deep Learning</li>
+          <li>Edge AI</li><li>Real-Time Inference</li>
+        </ul>
+      </div>
+      <div class="pillar-projects">
+        <article class="card">
+          <p class="card-kicker">Current research · NUS School of Computing</p>
+          <h3>Drone-Based Human Presence Detection for Search &amp; Rescue</h3>
+          <p>
+            An edge-based audio classification system for detecting people in real time from drones.
+            Source separation isolates ambient sound from propeller noise, and the deep learning models
+            are designed to stay accurate under field conditions with heavy drone noise.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 OR -->
+    <section id="or" class="section pillar container">
+      <div class="pillar-intro">
+        <p class="section-label">04 · Optimisation</p>
+        <h2>Operations Research</h2>
+        <p>
+          I formulate and solve optimisation problems where uncertainty, capacity and cost pull in
+          different directions, from PhD-level theory to services running in production.
+        </p>
+        <ul class="tags">
+          <li>Gurobi</li><li>CPLEX</li><li>MILP</li><li>Heuristics</li>
+          <li>Scenario Modelling</li><li>Game Theory</li><li>SimPy</li>
+        </ul>
+      </div>
+      <div class="pillar-projects">
+        <article class="card">
+          <p class="card-kicker">Industry project · Automotive manufacturing</p>
+          <h3>Real-Time Logistics Sequencing</h3>
+          <p>
+            A real-time sequencing algorithm that processes dynamic production signals to optimise
+            delivery order in logistics operations, integrated into the plant's OT systems.
+          </p>
+          <ul class="metrics">
+            <li><strong>80%</strong> less downtime (16.8% → 3.4%)</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="card-kicker">Industry project · Workforce planning</p>
+          <h3>Workforce Planning with Cross-Training</h3>
+          <p>
+            A constrained optimisation service for workforce planning that models cross-training
+            and availability across 50 workers. It is deployed on Kubernetes to support production
+            planning decisions.
+          </p>
+          <ul class="metrics">
+            <li><strong>&lt;10s</strong> inference time</li>
+            <li><strong>50</strong> workers modelled</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="card-kicker">Industry project · Assembly-line optimisation</p>
+          <h3>Task Allocation for Assembly-Line Workers</h3>
+          <p>
+            I extended and maintained an optimisation engine that assigns assembly-line work to workers
+            while meeting production targets. It respects vehicle options, process and sequencing
+            constraints, work environments, locations and tools. Clustering generates alternative
+            assignment plans, and mixed-integer models solved with Gurobi optimise both single-worker
+            and multi-worker processes.
+          </p>
+          <ul class="tags small"><li>Gurobi</li><li>MILP</li><li>Clustering</li><li>Python</li></ul>
+        </article>
+        <article class="card">
+          <p class="card-kicker">Industry project · Inventory</p>
+          <h3>Inventory Decisions under Uncertainty</h3>
+          <p>
+            A decision support model that uses scenario modelling to balance cost against service
+            level, deciding when to order and how much when lead times are uncertain and space is limited.
+          </p>
+        </article>
+        <article class="card">
+          <p class="card-kicker">PhD research · NTU</p>
+          <h3>Internal Carbon Pricing for Multi-Unit Firms</h3>
+          <p>
+            A game-theoretic internal carbon pricing mechanism, solving constrained optimisation
+            problems to find optimal uniform and non-uniform tax structures across business units.
+            It shows that non-uniform taxes preserve long-term competitiveness for hard-to-abate
+            sectors, despite short-term profit trade-offs.
+          </p>
+        </article>
+        <article class="card">
+          <p class="card-kicker">MS research · IIT Madras · Published</p>
+          <h3>Large-Scale Inventory Routing</h3>
+          <p>
+            MILP formulations, lower bounding methods and heuristics for large-scale Inventory Routing
+            Problems with backorders and without split deliveries, solved with CPLEX.
+          </p>
+          <p class="citation">
+            <em>Mathematical Models and Heuristics for an Inventory Routing Problem Without Split
+            Deliveries.</em> Book chapter in Emerging Frontiers in Operations and Supply Chain
+            Management, pp. 43–63. Springer, 2021.
+          </p>
+        </article>
+        <p class="nda-note">
+          Industry work is described at a high level to respect confidentiality. I'm happy to discuss
+          my approach in conversation.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section container">
+      <p class="section-label">Experience</p>
+      <h2>Where I've worked</h2>
+      <ol class="timeline">
+        <li>
+          <div class="timeline-meta">Jul 2026 – Present</div>
+          <div>
+            <h3>Research Fellow (Data Science Manager)</h3>
+            <p class="org">School of Computing, National University of Singapore</p>
+            <p>Developing edge-based audio classification for real-time human presence detection from drones in search and rescue.</p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-meta">Sep 2022 – Jul 2026</div>
+          <div>
+            <h3>Data Scientist (Optimisation)</h3>
+            <p class="org">Hyundai Motor Group Innovation Centre Singapore · AI Research Centre</p>
+            <p>Built and deployed decision support, optimisation, computer vision and LLM systems for manufacturing, working with cross-functional teams from requirements to production.</p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-meta">Jan 2021 – Dec 2021</div>
+          <div>
+            <h3>Instructor</h3>
+            <p class="org">Nanyang Technological University</p>
+            <p>Taught graduate courses in Operations Research, Probability Theory, Statistical Inference and Regression Analysis, with hands-on work in R and Python.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="subhead">Education</h3>
+      <div class="edu-grid">
+        <div class="edu">
+          <p class="edu-years">2018 – 2024</p>
+          <h4>PhD, Operations Management</h4>
+          <p>Nanyang Business School, NTU Singapore</p>
+          <p class="edu-note">Three essays on sustainable operations management · GPA 4.79/5</p>
+        </div>
+        <div class="edu">
+          <p class="edu-years">2016 – 2018</p>
+          <h4>MS (by Research), Operations Management</h4>
+          <p>Indian Institute of Technology Madras</p>
+          <p class="edu-note">Inventory routing: MILP and heuristics · CGPA 9.64/10</p>
+        </div>
+        <div class="edu">
+          <p class="edu-years">2011 – 2015</p>
+          <h4>BE, Industrial Engineering</h4>
+          <p>College of Engineering Guindy</p>
+          <p class="edu-note">CGPA 9.25/10</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLKIT -->
+    <section id="toolkit" class="section container">
+      <p class="section-label">Toolkit</p>
+      <h2>Tools I work with</h2>
+      <div class="toolkit-grid">
+        <div><h4>Optimisation</h4><p>Gurobi · gurobipy · CPLEX · SimPy · SciPy</p></div>
+        <div><h4>AI / ML</h4><p>PyTorch · TensorFlow · MMDetection · TorchServe · OpenCV · scikit-learn</p></div>
+        <div><h4>LLMs</h4><p>LangChain · Hugging Face · Ollama · OpenAI API · Claude · RAG · HNSW vector search</p></div>
+        <div><h4>Cloud &amp; deployment</h4><p>AWS (SageMaker, Lambda, API Gateway, S3, ECS) · Docker · Kubernetes · FastAPI</p></div>
+        <div><h4>MLOps</h4><p>MLflow · GitLab · CloudWatch · Jira</p></div>
+        <div><h4>Languages &amp; BI</h4><p>Python · SQL · R · C/C++ · Power BI · Tableau · Plotly</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container">
+      <div class="contact-card">
+        <p class="section-label">Contact</p>
+        <h2>Let's build something useful</h2>
+        <p>I'm open to research collaborations, applied AI and optimisation roles, and interesting problems.</p>
+        <a class="btn btn-primary" href="mailto:krpreethi17@gmail.com">Say hello</a>
+        <p class="contact-email">krpreethi17@gmail.com</p>
+        <ul class="socials">
+          <li><a href="https://github.com/Preethskr" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/preethi-k-m-ramanujam-phd-36b00494/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <!-- <li><a href="resume.pdf" target="_blank" rel="noopener">Résumé</a></li> -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Preethi K M Ramanujam · Singapore</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
